@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Playbook sign-off · Gabrielle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<header class="bar" id="bar">
+  <button class="bar-title" id="tocBtn" aria-label="Open contents">
+    <b>Playbook sign-off</b>
+    <span id="barSub">About 45 minutes</span>
+  </button>
+  <div class="bar-track" aria-hidden="true"><i id="barFill"></i></div>
+  <span class="bar-save" id="saveState">Saved on this device</span>
+</header>
+
+<nav class="toc" id="toc" aria-label="Contents" hidden>
+  <div class="toc-sheet">
+    <div class="toc-head"><b>Contents</b><button class="x" id="tocClose" aria-label="Close">×</button></div>
+    <ol id="tocList"></ol>
+  </div>
+</nav>
+
+<main id="app"></main>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button class="x modal-x" id="modalClose" aria-label="Close">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="data.js?v=1"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>
