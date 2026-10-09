@@ -21,7 +21,9 @@ p { margin: 0; }
 .bar-title { all: unset; cursor: pointer; display: grid; line-height: 1.2; grid-area: t; }
 .bar-title b { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
 .bar-title span { font-size: 13px; color: var(--ink2); }
-.bar-save { grid-area: s; align-self: start; padding-top: 2px; font-size: 12.5px; color: var(--cap); text-align: right; }
+.bar-right { grid-area: s; display: grid; justify-items: end; gap: 4px; }
+.bar-toc { all: unset; cursor: pointer; font-size: 14px; font-weight: 600; background: var(--card); padding: 8px 14px; border-radius: 128px; min-height: 20px; }
+.bar-save { align-self: start; padding-top: 2px; font-size: 12.5px; color: var(--cap); text-align: right; }
 .bar-save.err { color: var(--warn); }
 .bar-track { grid-area: p; height: 6px; border-radius: 6px; background: var(--track); overflow: hidden; }
 .bar-track i { display: block; height: 100%; width: 0; border-radius: 6px; background: var(--dark); transition: width .6s var(--ease); }
@@ -36,7 +38,7 @@ p { margin: 0; }
 .toc li a { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 12px 4px; border-bottom: 1px solid var(--hair); color: var(--ink); text-decoration: none; }
 .toc li a span { color: var(--cap); font-size: 13px; }
 .toc li.done a span { color: var(--ok); font-weight: 600; }
-.x { all: unset; cursor: pointer; width: 36px; height: 36px; display: grid; place-items: center; font-size: 26px; color: var(--ink2); border-radius: 50%; }
+.x { all: unset; cursor: pointer; width: 44px; height: 44px; display: grid; place-items: center; font-size: 26px; color: var(--ink2); border-radius: 50%; }
 .x:hover { background: var(--canvas); }
 
 /* layout */
@@ -125,15 +127,16 @@ input[type=text] { width: 100%; border: 0; border-radius: 14px; background: var(
 .vnotes { display: grid; gap: 4px; }
 .vnotes audio { width: 100%; height: 36px; }
 .seg { display: inline-grid; grid-auto-flow: column; background: #f1f3f7; border-radius: 128px; padding: 3px; gap: 2px; }
-.seg button { all: unset; cursor: pointer; padding: 7px 12px; border-radius: 128px; font-size: 13px; font-weight: 600; color: var(--ink2); white-space: nowrap; }
+.seg button { all: unset; cursor: pointer; padding: 11px 13px; border-radius: 128px; font-size: 13px; font-weight: 600; color: var(--ink2); white-space: nowrap; }
 .seg button.on { background: var(--dark); color: #fff; }
-.scale { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; }
-.scale button { all: unset; cursor: pointer; text-align: center; padding: 11px 0; border-radius: 12px; background: var(--canvas); font-weight: 700; }
+.scale { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+@media (min-width: 760px) { .scale { grid-template-columns: repeat(10, 1fr); } }
+.scale button { all: unset; cursor: pointer; text-align: center; padding: 13px 0; min-height: 22px; border-radius: 12px; background: var(--canvas); font-weight: 700; }
 .scale button.on { background: var(--dark); color: #fff; }
 
 /* chapter */
 .ch-band { display: flex; gap: 12px; align-items: center; }
-.ch-dot { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 22px; background: color-mix(in srgb, var(--c) 16%, #fff); flex: none; }
+.ch-dot { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 20px; font-weight: 700; color: color-mix(in srgb, var(--c) 70%, #000); background: color-mix(in srgb, var(--c) 16%, #fff); flex: none; }
 .ch-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
 .learn { counter-reset: n; list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .learn li { counter-increment: n; display: grid; grid-template-columns: 26px 1fr; gap: 8px; font-size: 15.5px; }
@@ -149,7 +152,7 @@ details > div { padding-bottom: 12px; }
 .rows { display: grid; }
 .row { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--hair); font-size: 14.5px; align-items: center; }
 .row:last-child { border-bottom: 0; }
-.row .play { all: unset; cursor: pointer; font-weight: 600; color: var(--info); font-size: 14px; }
+.row .play { all: unset; cursor: pointer; font-weight: 600; color: var(--info); font-size: 14px; padding: 12px 4px 12px 16px; }
 
 /* media */
 .clips { display: grid; gap: 12px; }
@@ -217,3 +220,14 @@ details > div { padding-bottom: 12px; }
   .bar { padding-left: 28px; padding-right: 28px; }
 }
 .shifts { display: grid; gap: 10px; }
+
+.vctl button.ghost { background: var(--card); color: var(--ink); }
+.vctl button { padding: 11px 16px; }
+.need-hint { font-size: 13px; color: var(--warn); font-weight: 600; }
+.need-hint:empty { display: none; }
+.opt:disabled, .opt[disabled] { cursor: not-allowed; }
+
+details.mini { background: none; padding: 0; margin: 0; }
+details.mini summary { padding: 2px 0; font-size: 13px; font-weight: 600; color: var(--info); }
+details.mini summary::after { content: none; }
+details.mini > p { padding: 4px 0 2px; }
